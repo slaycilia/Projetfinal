@@ -5,10 +5,10 @@ from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 fig, ax = plt.subplots()
 
 # Chargement de l'image
-image = plt.imread('chemin/vers/image.png')
+image = plt.imread('testlafontaine.png')
 
 # Affichage de l'image de fond
-ax.imshow(image, extent=[xmin, xmax, ymin, ymax], aspect='auto')
+ax.imshow(image, aspect='auto')
 
 # Tracer vos données sur le plot
 # ...
