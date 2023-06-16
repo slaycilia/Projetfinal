@@ -3,8 +3,8 @@ from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 from PIL import Image
 
-image_jpg = Image.open('testimage.jpg')
-image_png_path ='testimage.png'
+image_jpg = Image.open('images/testimage.jpg')
+image_png_path = 'images/testimage.png'
 image_jpg.save(image_png_path,'PNG')
 # Création du plot
 fig = plt.figure()

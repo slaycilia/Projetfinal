@@ -1,5 +1,3 @@
-import math
-
 class Drone():
     def __init__(self, diametre, hauteur, vitesse, masse):
         self.diametre = diametre # en m
