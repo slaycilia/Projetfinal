@@ -2,14 +2,14 @@ import matplotlib.patches as patches
 
 #Classe qui permet de définir des obstacles dans l'espace
 
-class Obstacle2D():
+class Obstacle3D():
     def __init__(self, origine, longueur, largeur, rayon):
         self.origine = origine #point d'origine de l'obstacle
         self.longueur = longueur #longueur de l'obstacle selon l'axe x s'il s'agit d'un rectangle
         self.largeur = largeur #largeur de l'obstacle selon l'axe y s'il s'agit d'un rectangle
         self.rayon = rayon #Rayon de l'obstacle s'il s'agit d'un cercle
 
-    def tracer_obstacle_2D(self, graphique):
+    def tracer_obstacle(self, graphique):
         """
         Ajout de l'obstacle sur le graphique représentant l'espace dans lequel évolue le drône
         :param graphique: graphique qui représente l'espace dans lequel évolue le drône
@@ -30,6 +30,3 @@ class Obstacle2D():
             cercle = patches.Circle(origine, rayon, linewidth=1, edgecolor='r', facecolor='r')
             # Ajout du cercle sur le graphique
             graphique.add_patch(cercle)
-
-
-

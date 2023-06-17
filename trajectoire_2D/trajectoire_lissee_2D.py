@@ -1,6 +1,6 @@
 import math
 
-class TrajectoireDrone :
+class TrajectoireDrone2D :
     def __init__(self,points_passage,resolution):
         self.points_passage = points_passage   # Points indiqués par l'utilisateur par lesquels le drône doit dans l'idéal passer
         self. resolution = resolution # Résolution de la trajectoire lissée idéale tracée

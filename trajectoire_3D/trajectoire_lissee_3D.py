@@ -3,6 +3,10 @@ import numpy as np
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 
+class TrajectoireDrone3D:
+    def __init__(self,points_passage,resolution):
+        self.points_passage = points_passage
+
 
 def calculer_distance(point1, point2):
     """
