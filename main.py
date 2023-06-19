@@ -11,7 +11,7 @@ xmax = 710.33
 ymax = 673.15
 
 # Informations recueillies sur le vent
-vitesse_vent = 4.12  # m/s
+vitesse_vent = 20  # m/s
 angle_vent = 50.0  # degrés
 force_drone = 2.16
 surface_contact = 0.024
@@ -24,23 +24,19 @@ vitesse_drone = 60
 ##TRAJECTOIRE SOUHAITÉE INITIALEMENT
 
 # Points par lequel le drône doit passer
-points_passage = [(0, 0), (200, 135), (400, 500), (600, 230)]
+points_passage = [(50, 600), (200, 200), (300, 500),(450,350), (600, 550)]
 # Résolution du lissage de la courbe
 resolution = 100
 # Graphique représentant la trajectoire souhaitée pour le drône
 trajectoire_drone_ideale = trajectoire.TrajectoireDrone2D(points_passage, resolution, xmin, ymin, xmax, ymax)
 traj_ini = trajectoire_drone_ideale.lisser_trajectoire()
-trajectoire_drone_ideale.tracer_trajectoire_2D()
 
 ## TRAJECTOIRE DÉVIEE PAR LE VENT
 
-trajectoire_drone_derivee = trajectoire.TrajectoireDerivee(traj_ini, vitesse_vent, angle_vent, surface_contact, force_drone, masse_drone, vitesse_drone)
+trajectoire_drone_derivee = trajectoire.TrajectoiresDeriveeEtInitiale(traj_ini, vitesse_vent, angle_vent, surface_contact, force_drone)
 traj_dev=trajectoire_drone_derivee.calculer_trajectoire_derivee()
-print("dev",traj_dev)
-derive_drone = trajectoire.TrajectoireDrone2D(traj_dev, resolution, xmin, ymin, xmax, ymax)
-derive_drone.lisser_trajectoire()
-print(derive_drone)
-derive_drone.tracer_trajectoire_2D()
+traj_fin = trajectoire_drone_derivee.calculer_trajectoire_initiale()
+tracer = trajectoire_drone_ideale.tracer_trajectoire_2D(traj_ini, traj_dev, traj_fin)
 
 
 # Tracé trajectoire

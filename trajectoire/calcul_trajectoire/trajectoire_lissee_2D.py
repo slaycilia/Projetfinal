@@ -59,24 +59,28 @@ class TrajectoireDrone2D:
         x_interp = np.linspace(min(x_coords), max(x_coords), self.resolution)
         y_interp = self.fonction_polynomiale(x_interp, *coeffs)
 
-        return x_interp, y_interp
+        trajectoire_lissee = [(x, y) for x, y in zip(x_interp, y_interp)]
 
-    def tracer_trajectoire_2D(self):
+        return trajectoire_lissee
+
+    def tracer_trajectoire_2D(self, trajectoire_initiale, trajectoire_deviee, trajectoire_finale):
         image = plt.imread('/Users/ceciliou/Document/ETS MTL/MGA802_ETE/Projetfinal/Projet/Sans titre/trajectoire/graphique/testimage.jpg')
         fig, ax = plt.subplots()
         ax.imshow(image, extent=[self.xmin, self.xmax, self.ymin, self.ymax], aspect='auto', alpha=0.5)
-        x_interp, y_interp = self.lisser_trajectoire()
-        plt.plot(x_interp, y_interp, marker='o', label='Trajectoire lissée')
 
-        trajectoire = self.calculer_trajectoire()
-        x_coords = [point[0] for point in trajectoire]
-        y_coords = [point[1] for point in trajectoire]
-        plt.plot(x_coords, y_coords, marker='o', label='Trajectoire initiale')
+        x_rep, y_rep = zip(*self.points_passage)
+        x_init, y_init = zip(*trajectoire_initiale)  # Séparer les coordonnées x et y de la trajectoire initiale
+        x_liss, y_liss = zip(*trajectoire_deviee)  # Séparer les coordonnées x et y de la trajectoire lissée
+        x_dev, y_dev = zip(*trajectoire_finale)  # Séparer les coordonnées x et y de la trajectoire déviée
+
+        plt.plot(x_rep,y_rep, marker="o", label = "Points repères")
+        plt.plot(x_init, y_init, marker='+', label='Trajectoire souhaitée')
+        plt.plot(x_liss, y_liss, marker='+', label='Trajectoire déviéé')
+        plt.plot(x_dev, y_dev, marker='+', label='Trajectoire finale')
+
         plt.xlabel('X')
         plt.ylabel('Y')
         plt.title('Trajectoire du drone')
         plt.grid(True)
         plt.legend()
         plt.show()
-
-
