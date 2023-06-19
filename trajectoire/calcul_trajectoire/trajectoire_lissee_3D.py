@@ -2,41 +2,31 @@ import math
 import numpy as np
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
+
 class TrajectoireDrone3D:
-    def __init__(self,points_passage,resolution):
+    def __init__(self, points_passage, resolution):
         self.points_passage = points_passage
         self.resolution = resolution
-        self.trajectoire_3D = self.calculer_trajectoire_3D
+        self.trajectoire_3D = self.calculer_trajectoire_3D()
 
-    def calculer_distance(self,point1, point2):
-        """
-        Calcule la distance entre deux points en utilisant le théorème de Pythagore.
-        Chaque point est un triplet de coordonnées (x, y, z).
-        """
+    def calculer_distance(self, point1, point2):
+        # Calcule la distance entre deux points en utilisant le théorème de Pythagore.
         dx = point2[0] - point1[0]
         dy = point2[1] - point1[1]
         dz = point2[2] - point1[2]
         distance = math.sqrt(dx ** 2 + dy ** 2 + dz ** 2)
         return distance
 
-    def calculer_angle(self,point1, point2):
-        """
-        Calcule l'angle entre deux points par rapport à l'axe x positif.
-        Chaque point est un triplet de coordonnées (x, y, z).
-        L'angle est retourné en radians.
-        """
+    def calculer_angle(self, point1, point2):
+        # Calcule l'angle entre deux points par rapport à l'axe x positif.
         dx = point2[0] - point1[0]
         dy = point2[1] - point1[1]
         dz = point2[2] - point1[2]
         angle = math.atan2(dy, dx)
         return angle
 
-    def calculer_points_intermediaires(self,point1, point2):
-        """
-        Calcule les points intermédiaires entre deux points en fonction d'une résolution donnée.
-        Chaque point est un triplet de coordonnées (x, y, z).
-        La résolution détermine le nombre de points intermédiaires à générer.
-        """
+    def calculer_points_intermediaires(self, point1, point2):
+        # Calcule les points intermédiaires entre deux points en fonction d'une résolution donnée.
         distance = self.calculer_distance(point1, point2)
         angle = self.calculer_angle(point1, point2)
         pas = distance / (self.resolution + 1)
@@ -48,21 +38,12 @@ class TrajectoireDrone3D:
             points_intermediaires.append((x, y, z))
         return points_intermediaires
 
-    def fonction_polynomiale(x, a, b, c, d):
-        """
-        Fonction polynomiale utilisée pour l'ajustement de courbe.
-        x : variable indépendante
-        a, b, c, d : coefficients du polynôme
-        """
+    def fonction_polynomiale(self, x, a, b, c, d):
+        # Fonction polynomiale utilisée pour l'ajustement de courbe.
         return a * x ** 3 + b * x ** 2 + c * x + d
 
     def calculer_trajectoire_3D(self):
-        """
-        Calcule la trajectoire du drone en utilisant une liste de waypoints (points clés de repère).
-        Chaque waypoint est un triplet de coordonnées (x, y, z).
-        La trajectoire est une liste de points (x, y, z) formant une séquence de déplacements linéaires.
-        La résolution détermine le nombre de points intermédiaires à générer entre chaque paire de waypoints.
-        """
+        # Calcule la trajectoire du drone en utilisant une liste de waypoints (points clés de repère).
         trajectoire = []
         for i in range(len(self.points_passage) - 1):
             point_actuel = self.points_passage[i]
@@ -71,8 +52,6 @@ class TrajectoireDrone3D:
             trajectoire.extend(points_intermediaires)
         trajectoire.append(self.points_passage[-1])  # Ajouter le dernier waypoint à la trajectoire
         return trajectoire
-
-
 
 # Utilisation de la classe
 
@@ -97,15 +76,15 @@ z_coords = np.array([point[2] for point in trajectoire])
 
 # Ajustement de courbe
 initial_guess = [1, 1, 1, 1]  # Estimation initiale des coefficients
-coeffs, _ = curve_fit(TrajectoireDrone3D.fonction_polynomiale, x_coords, y_coords, p0=initial_guess)
-coeffs1, _ = curve_fit(TrajectoireDrone3D.fonction_polynomiale, x_coords, z_coords, p0=initial_guess)
-coeffs2, _ = curve_fit(TrajectoireDrone3D.fonction_polynomiale, y_coords, x_coords, p0=initial_guess)
+coeffs, _ = curve_fit(TrajectoireDrone3D().fonction_polynomiale, x_coords, y_coords, p0=initial_guess)
+coeffs1, _ = curve_fit(TrajectoireDrone3D().fonction_polynomiale, x_coords, z_coords, p0=initial_guess)
+coeffs2, _ = curve_fit(TrajectoireDrone3D().fonction_polynomiale, y_coords, x_coords, p0=initial_guess)
 
 # Génération de la trajectoire ajustée
 x_interp = np.linspace(min(x_coords), max(x_coords), resolution)
-y_interp = TrajectoireDrone3D.fonction_polynomiale(x_interp, *coeffs)
-z_interp = TrajectoireDrone3D.fonction_polynomiale(x_interp, *coeffs1)
-x_interp = TrajectoireDrone3D.fonction_polynomiale(y_interp, *coeffs2)
+y_interp = TrajectoireDrone3D().fonction_polynomiale(x_interp, *coeffs)
+z_interp = TrajectoireDrone3D().fonction_polynomiale(x_interp, *coeffs1)
+x_interp = TrajectoireDrone3D().fonction_polynomiale(y_interp, *coeffs2)
 
 # Tracé de la trajectoire
 fig = plt.figure()
