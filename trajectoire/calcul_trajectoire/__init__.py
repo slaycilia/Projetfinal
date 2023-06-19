@@ -1,2 +1,2 @@
 from .trajectoire_lissee_2D import TrajectoireDrone2D
-from .trajectoire_lissee_3D import TrajectoireDrone3D
+#from .trajectoire_lissee_3D import TrajectoireDrone3D
