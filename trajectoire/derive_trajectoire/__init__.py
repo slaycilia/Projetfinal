@@ -1,1 +1,1 @@
-from .trajectoire_derivee import TrajectoireDerivee
+#from .trajectoire_derivee import TrajectoireDerivee
