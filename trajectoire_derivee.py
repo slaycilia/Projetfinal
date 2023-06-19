@@ -50,7 +50,7 @@ def calculer_trajectoire_derivee(trajectoire, vitesse_vent, angle_vent, surface_
               Chaque point est un tuple (latitude, longitude).
     """
     # Initialisation de la trajectoire dérivée
-    trajectoire_derivee = [trajectoire[1]]
+    trajectoire_derivee = [trajectoire[0]]
     temps = [0]
     # Parcours de la trajectoire
     for i in range(1, len(trajectoire)):
