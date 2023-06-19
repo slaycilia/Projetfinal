@@ -1,2 +1,0 @@
-from .trajectoire_lissee_2D import TrajectoireDrone2D
-from .obstacles_2D import Obstacle2D
