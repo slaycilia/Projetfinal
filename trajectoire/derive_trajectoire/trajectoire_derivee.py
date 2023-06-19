@@ -48,6 +48,8 @@ class TrajectoireDerivee:
         return trajectoire_derivee
 
 
+
+
 # Exemple d'utilisation de la classe
 
 # Définition des paramètres
@@ -60,7 +62,7 @@ masse_drone = 1
 vitesse_drone = 10
 
 # Création de l'objet DroneTrajectory
-drone_traj = DroneTrajectory(trajectoire, vitesse_vent, angle_vent, surface_contact, force_drone, masse_drone, vitesse_drone)
+drone_traj = TrajectoireDerivee(trajectoire, vitesse_vent, angle_vent, surface_contact, force_drone, masse_drone, vitesse_drone)
 
 # Calcul de la trajectoire dérivée
 trajectoire_derivee = drone_traj.calculer_trajectoire_derivee()
