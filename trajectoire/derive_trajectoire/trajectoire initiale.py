@@ -43,7 +43,7 @@ def calcul_position_initiale(vitesse_vent, angle_vent, surface_contact, force_dr
     position_initiale_y = y2 + ((force_drone_y - force_vent_y) / masse_drone) * ((temps2**2 - temps1**2) / 2)
     return (position_initiale_x, position_initiale_y)
 
-def calculer_trajectoire_initiale(trajectoire_derivee, vitesse_vent, angle_vent, surface_contact, force_drone, masse_drone, vitesse_drone):
+def calculer_trajectoire_initiale(trajectoire, vitesse_vent, angle_vent, surface_contact, force_drone, masse_drone, vitesse_drone):
     """Calcule la trajectoire initiale d'un drône en fonction du vent.
 
     Arguments:
@@ -70,7 +70,7 @@ def calculer_trajectoire_initiale(trajectoire_derivee, vitesse_vent, angle_vent,
         trajectoire_initiale.append(calcul_position_initiale(vitesse_vent, angle_vent, surface_contact, force_drone, masse_drone, temps[i-1], vitesse_drone, trajectoire[i-1][0], trajectoire[i-1][1], trajectoire[i][0], trajectoire[i][1]))
     return trajectoire_initiale
 
-def calculer_trajectoire_derivee(trajectoire_derivee, vitesse_vent, angle_vent, surface_contact, force_drone, masse_drone, vitesse_drone):
+def calculer_trajectoire_derivee(trajectoire, vitesse_vent, angle_vent, surface_contact, force_drone, masse_drone, vitesse_drone):
     """Calcule la trajectoire dérivée d'un drône en fonction du vent.
 
     Arguments:
