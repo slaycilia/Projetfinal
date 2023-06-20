@@ -64,7 +64,7 @@ class TrajectoireDrone2D:
         return trajectoire_lissee
 
     def tracer_trajectoire_2D(self, trajectoire_initiale, trajectoire_deviee, trajectoire_finale):
-        image = plt.imread('/Users/ceciliou/Document/ETS MTL/MGA802_ETE/Projetfinal/Projet/Sans titre/trajectoire/graphique/testimage.jpg')
+        image = plt.imread('/Users/ceciliou/Document/ETS MTL/MGA802_ETE/Projetfinal/Projet/Sans titre/trajectoire/images/testimage.jpg')
         fig, ax = plt.subplots()
         ax.imshow(image, extent=[self.xmin, self.xmax, self.ymin, self.ymax], aspect='auto', alpha=0.5)
 

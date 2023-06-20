@@ -1,5 +1,5 @@
 #On importe tous les dossiers
-#import interface_utilisateur
+import interface_utilisateur
 #import atmospheric_drone
 import trajectoire
 
@@ -24,7 +24,10 @@ vitesse_drone = 60
 ##TRAJECTOIRE SOUHAITÉE INITIALEMENT
 
 # Points par lequel le drône doit passer
-points_passage = [(50, 600), (200, 200), (300, 500),(450,350), (600, 550)]
+input_handler = interface_utilisateur.InterfaceUtilisateur()
+points_passage = input_handler.get_user_input()
+
+#points_passage_2 =
 # Résolution du lissage de la courbe
 resolution = 100
 # Graphique représentant la trajectoire souhaitée pour le drône
