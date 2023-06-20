@@ -38,21 +38,3 @@ traj_dev=trajectoire_drone_derivee.calculer_trajectoire_derivee()
 traj_fin = trajectoire_drone_derivee.calculer_trajectoire_initiale()
 tracer = trajectoire_drone_ideale.tracer_trajectoire_2D(traj_ini, traj_dev, traj_fin)
 
-
-# Tracé trajectoire
-# Exemple d'utilisation de la classe
-
-# Définition des paramètres
-#trajectoire = [(0, 0), (1, 5), (7, 5), (9, 7)]
-
-# Calcul de la trajectoire dérivée
-#trajectoire_derivee = drone_traj.calculer_trajectoire_derivee()
-
-# Affichage du résultat
-#print("Trajectoire dérivée :", trajectoire_derivee)
-
-
-
-
-
-
