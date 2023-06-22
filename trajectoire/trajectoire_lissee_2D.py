@@ -1,7 +1,7 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.optimize import curve_fit
+
 
 class TrajectoireDrone2D:
     def __init__(self, points_passage, resolution, xmin, ymin, xmax, ymax):
@@ -53,20 +53,25 @@ class TrajectoireDrone2D:
         x_coords = np.array([point[0] for point in trajectoire])
         y_coords = np.array([point[1] for point in trajectoire])
 
-        initial_guess = [100, 100, 100, 100]
-        coeffs, _ = curve_fit(self.fonction_polynomiale, x_coords, y_coords, p0=initial_guess)
+        s_arg = np.linspace(0, 1, len(trajectoire))  # Nouvel array s_arg
 
-        x_interp = np.linspace(min(x_coords), max(x_coords), self.resolution)
-        y_interp = self.fonction_polynomiale(x_interp, *coeffs)
+        coeffs = np.polyfit(s_arg, x_coords, 30)
+        coeffs2=np.polyfit(s_arg, y_coords, 30)
+
+
+        x_interp = np.polyval(coeffs, s_arg)
+        y_interp = np.polyval(coeffs2, s_arg)
+
+
 
         trajectoire_lissee = [(x, y) for x, y in zip(x_interp, y_interp)]
 
         return trajectoire_lissee
 
     def tracer_trajectoire_2D(self, trajectoire_initiale, trajectoire_deviee, trajectoire_finale):
-        image = plt.imread('/Users/ceciliou/Document/ETS MTL/MGA802_ETE/Projetfinal/Projet/Sans titre/trajectoire/images/testimage.jpg')
-        fig, ax = plt.subplots()
-        ax.imshow(image, extent=[self.xmin, self.xmax, self.ymin, self.ymax], aspect='auto', alpha=0.5)
+        #image = plt.imread('testimage.jpg')
+        #fig, ax = plt.subplots()
+        #ax.imshow(image, extent=[self.xmin, self.xmax, self.ymin, self.ymax], aspect='auto', alpha=0.5)
 
         x_rep, y_rep = zip(*self.points_passage)
         x_init, y_init = zip(*trajectoire_initiale)  # Séparer les coordonnées x et y de la trajectoire initiale
