@@ -1,20 +1,40 @@
 #On importe tous les dossiers
-#import interface_utilisateur
+import interface_utilisateur
 #import atmospheric_drone
 import trajectoire
 
-# Tracé trajectoire
-
-# Points de passage et autres données de test
-points_passage = [(0, 0), (200, 135), (400, 500), (600, 230)]
-resolution = 100
+## PARAMÈTRES GÉNÉRAUX
+# Définition de la zone que peut parcourir le drône
 xmin = 0
 ymin = 0
 xmax = 710.33
 ymax = 673.15
 
-# Création de l'instance de la classe TrajectoireDrone2D
-trajectoire_drone = trajectoire.TrajectoireDrone2D(points_passage, resolution, xmin, ymin, xmax, ymax)
+# Informations recueillies sur le vent
+vitesse_vent = 20  # m/s
+angle_vent = 50.0  # degrés
+force_drone = 2.16
+surface_contact = 0.024
 
-# Tracé de la trajectoire
-trajectoire_drone.tracer_trajectoire_2D()
+# Informations sur le drône
+masse_drone = 1
+vitesse_drone = 60
+
+
+##TRAJECTOIRE SOUHAITÉE INITIALEMENT
+
+# Points par lequel le drône doit passer
+points_passage = interface_utilisateur.InterfaceUtilisateur().points
+
+# Résolution du lissage de la courbe
+resolution = 100
+# Graphique représentant la trajectoire souhaitée pour le drône
+trajectoire_drone_ideale = trajectoire.TrajectoireDrone2D(points_passage, resolution, xmin, ymin, xmax, ymax)
+traj_ini = trajectoire_drone_ideale.lisser_trajectoire()
+
+## TRAJECTOIRE DÉVIEE PAR LE VENT
+
+trajectoire_drone_derivee = trajectoire.TrajectoiresDeriveeEtInitiale(traj_ini, vitesse_vent, angle_vent, surface_contact, force_drone)
+traj_dev = trajectoire_drone_derivee.calculer_trajectoire_derivee()
+traj_fin = trajectoire_drone_derivee.calculer_trajectoire_initiale()
+tracer = trajectoire_drone_ideale.tracer_trajectoire_2D(traj_ini, traj_dev, traj_fin)
