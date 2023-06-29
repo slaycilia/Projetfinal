@@ -1,3 +1,5 @@
+#Interface utilisateur
+
 #On demande à l'utilisateur combien de points de repère il souhaite avoir
 import tkinter as tk
 from tkinter import ttk
