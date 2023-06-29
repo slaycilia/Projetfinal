@@ -1,3 +1,4 @@
 from .derive_et_correction import TrajectoiresDeriveeEtInitiale
-from .trajectoire_lissee_2D import TrajectoireDrone2D
+from .calculer_trajectoire_lissee_2D import TrajectoireDrone2D
+from .affichage_trajectoire_2D import AffichageTrajectoireDrone2D
 from .obstacles import *

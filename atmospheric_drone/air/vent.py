@@ -12,6 +12,7 @@ class Vent:
         :param api_key: Clé API nécessaire pour récupérer les données.
         :type api_key: str
         """
+
         self.latitude = latitude
         self.longitude = longitude
         self.api_key = api_key
@@ -36,11 +37,9 @@ class Vent:
 
         print(f"Wind Speed: {vitesse_vent} m/s")
         print(f"Wind Direction: {direction_vent}°")
+        return vitesse_vent, direction_vent
 
 # Coordonnées du point en 0,0 du repere local
 latitude = 45.525520
 longitude = -73.574279
 api_key = "8ec08053eaf6e14d403ebe21404b6391"
-
-vent = Vent(latitude, longitude,api_key)
-vent.mesure_du_vent()
