@@ -1,6 +1,5 @@
 import math
 import numpy as np
-import matplotlib.pyplot as plt
 
 class TrajectoiresDeriveeEtInitiale:
     def __init__(self, trajectoire, vitesse_vent, angle_vent, surface_contact, force_drone):
