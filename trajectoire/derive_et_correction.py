@@ -87,9 +87,9 @@ class TrajectoiresDeriveeEtInitiale:
                 self.calculer_vecteur_directeur(self.force_drone, self.calculer_angle(self.trajectoire[i - 1][0], self.trajectoire[i - 1][1], self.trajectoire[i][0], self.trajectoire[i][1])), self.calculer_vecteur_directeur(self.caluler_force_vent(), 123 - self.angle_vent))))
         return trajectoire_initiale
 
-# Exemple d'utilisation
+''' Exemple d'utilisation
 drone = TrajectoiresDeriveeEtInitiale([(0, 0), (1, 5), (7, 5), (9, 7)], 5, 45.0, 0.024, 2.16 )
 trajectoire_derivee = drone.calculer_trajectoire_derivee()
 print("Trajectoire dérivée :", trajectoire_derivee)
 trajectoire_initiale = drone.calculer_trajectoire_initiale()
-print("Trajectoire initiale :", trajectoire_initiale)
+print("Trajectoire initiale :", trajectoire_initiale)'''
