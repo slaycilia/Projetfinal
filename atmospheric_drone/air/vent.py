@@ -42,7 +42,5 @@ latitude = 45.525520
 longitude = -73.574279
 api_key = "8ec08053eaf6e14d403ebe21404b6391"
 
-# Exemple d'utilisation
-
-vent = Vent(latitude, longitude, api_key)
+vent = Vent(latitude, longitude,api_key)
 vent.mesure_du_vent()
