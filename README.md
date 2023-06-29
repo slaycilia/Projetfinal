@@ -1,2 +1,54 @@
 # Projetfinal
-Calculer et déterminer la trajectoire "lissée" par laquelle un drône doit passer pour prendre une vidéo stable.
+# Projet Python - Trajectoire de Drone
+
+Ce projet Python vise à calculer et tracer la trajectoire d'un drone en fonction des points de passage et des conditions atmosphériques.
+
+## Fonctionnalités
+
+- Permet à l'utilisateur de spécifier les points de passage du drone.
+- Calcule la trajectoire initiale lissée du drone.
+- Calcule la trajectoire déviée par le vent.
+- Calcule la trajectoire finale du drone.
+- Trace la trajectoire initiale, déviée et finale en 2D.
+
+## Structure du projet
+
+Le projet est organisé en plusieurs fichiers :
+
+- `main.py` : Point d'entrée principal du programme. Il gère les paramètres généraux, obtient les points de passage de l'utilisateur, calcule les trajectoires et trace les résultats.
+- `interface_utilisateur.py` : Contient la classe `InterfaceUtilisateur` qui gère l'interaction avec l'utilisateur pour obtenir les points de passage.
+- `trajectoire.py` : Contient les classes `TrajectoireDrone2D` et `TrajectoiresDeriveeEtInitiale` qui effectuent les calculs de trajectoire.
+-  `vent.py` : Contient la classe `Vent` qui effectue un appel a l'API de OpenWeatherMap pour connaitre les conditions actuelle du vent sur le lieu du vol.
+-  `drone.py` : Contient la classe `Drone`qui contient les caracteristiques physique d'un drône.
+## Dépendances
+
+Le projet Python dépend des modules suivants :
+
+- `numpy` : Utilisé pour manipuler des tableaux de données numériques.
+- `matplotlib` : Utilisé pour tracer les graphiques de trajectoire.
+
+## Configuration
+
+Les paramètres généraux du projet peuvent être configurés dans le fichier `main.py` :
+
+- `xmin`, `ymin`, `xmax`, `ymax` : Les limites de la zone que peut parcourir le drone.
+- `vitesse_vent` : La vitesse du vent en m/s.
+- `angle_vent` : L'angle du vent en degrés.
+- `force_drone` : La force du drone.
+- `surface_contact` : La surface de contact du drone.
+- `masse_drone` : La masse du drone.
+- `vitesse_drone` : La vitesse du drone.
+
+Assurez-vous d'avoir les modules `numpy` et `matplotlib` installés dans votre environnement Python pour exécuter le projet correctement.
+
+## Utilisation
+
+1. Exécutez le fichier `main.py`.
+2. Suivez les instructions pour entrer les points de passage du drone.
+3. Le programme calculera la trajectoire initiale, la trajectoire déviée par le vent et la trajectoire finale.
+4. Un graphique 2D sera affiché pour visualiser les trajectoires.
+
+N'oubliez pas d'installer les dépendances requises avant d'exécuter le projet.
+
+Si vous avez des questions ou des problèmes, n'hésitez pas à nous contacter.
+
