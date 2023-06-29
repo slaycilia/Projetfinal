@@ -24,10 +24,8 @@ vitesse_drone = 60
 ##TRAJECTOIRE SOUHAITÉE INITIALEMENT
 
 # Points par lequel le drône doit passer
-input_handler = interface_utilisateur.InterfaceUtilisateur()
-points_passage = input_handler.get_user_input()
+points_passage = interface_utilisateur.InterfaceUtilisateur().points
 
-#points_passage_2 =
 # Résolution du lissage de la courbe
 resolution = 100
 # Graphique représentant la trajectoire souhaitée pour le drône
@@ -37,7 +35,6 @@ traj_ini = trajectoire_drone_ideale.lisser_trajectoire()
 ## TRAJECTOIRE DÉVIEE PAR LE VENT
 
 trajectoire_drone_derivee = trajectoire.TrajectoiresDeriveeEtInitiale(traj_ini, vitesse_vent, angle_vent, surface_contact, force_drone)
-traj_dev=trajectoire_drone_derivee.calculer_trajectoire_derivee()
+traj_dev = trajectoire_drone_derivee.calculer_trajectoire_derivee()
 traj_fin = trajectoire_drone_derivee.calculer_trajectoire_initiale()
 tracer = trajectoire_drone_ideale.tracer_trajectoire_2D(traj_ini, traj_dev, traj_fin)
-
