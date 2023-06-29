@@ -1,1 +1,0 @@
-from .trajectoire_lissee_2D import TrajectoireDrone2D
