@@ -25,7 +25,7 @@ class Vent:
         en utilisant les coordonnées de latitude et de longitude fournies lors de
         l'initialisation de l'instance. Elle affiche ensuite la vitesse et la direction du vent.
 
-        :return: None
+        :return: vitesse_vent, direction_vent
         """
         url = f"https://api.openweathermap.org/data/2.5/weather?lat={self.latitude}&lon={self.longitude}&appid={self.api_key}"
         print(url)
