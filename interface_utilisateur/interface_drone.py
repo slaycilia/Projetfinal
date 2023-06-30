@@ -4,6 +4,14 @@ from tkinter import ttk
 
 class DonneesDrone:
     def __init__(self):
+        """
+        Classe pour saisir les informations du drone à l'aide de l'interface graphique Tkinter.
+
+        La fenêtre Tkinter est créée avec les champs de saisie pour la masse, la hauteur,
+        le diamètre et la vitesse du drone. Lorsque l'on clique sur le bouton "Valider",
+        les informations sont récupérées et affichées.
+
+        """
         self.window = tk.Tk()
         self.window.title("Saisie des informations du drone")
         self.style = ttk.Style(self.window)
@@ -38,6 +46,14 @@ class DonneesDrone:
         self.window.mainloop()
 
     def get_drone_info(self):
+        """
+        Récupère les informations saisies sur le drone.
+
+        Les informations de masse, hauteur, diamètre et vitesse sont récupérées à partir des champs
+        de saisie de l'interface graphique. Les valeurs sont converties en nombres à virgule flottante
+        et stockées dans les attributs correspondants de l'instance de la classe.
+
+        """
         self.masse = float(self.masse_entry.get())
         self.hauteur = float(self.hauteur_entry.get())
         self.diametre = float(self.diametre_entry.get())
@@ -51,6 +67,7 @@ class DonneesDrone:
         print("Hauteur :", self.hauteur, "m")
         print("Diamètre :", self.diametre, "m")
         print("Vitesse :", self.vitesse, "m/s")
+
 
 '''Utilisation de la classe DroneInputApp
 app = DonneesDrone()

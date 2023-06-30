@@ -7,6 +7,15 @@ from tkinter import ttk
 
 class InterfaceUtilisateur:
     def __init__(self):
+        """
+        Classe pour saisir le nombre de points et leurs coordonnées à l'aide de l'interface graphique Tkinter.
+
+        Une fenêtre Tkinter est créée pour demander à l'utilisateur le nombre de points qu'il souhaite saisir.
+        Lorsque le bouton "Valider" est cliqué, une nouvelle fenêtre s'ouvre pour saisir les coordonnées
+        de chaque point. Une fois que tous les points sont saisis et que le bouton "Enregistrer" est cliqué,
+        les coordonnées sont stockées dans la liste self.points.
+
+        """
         self.window = tk.Tk()
         self.window.title("Saisie du nombre de points")
         self.style = ttk.Style(self.window)
@@ -26,6 +35,15 @@ class InterfaceUtilisateur:
         self.window.mainloop()
 
     def saisir_points(self):
+        """
+        Saisit les coordonnées des points.
+
+        Récupère le nombre de points saisi par l'utilisateur à partir du champ de saisie de l'interface graphique.
+        Une nouvelle fenêtre s'ouvre avec les champs de saisie pour les coordonnées x et y de chaque point.
+        Lorsque le bouton "Enregistrer" est cliqué, les coordonnées sont converties en nombres à virgule flottante
+        et stockées dans la liste self.points.
+
+        """
         nombre_points = int(self.entry.get())
         self.points = []
 
