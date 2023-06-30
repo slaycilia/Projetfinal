@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>atmospheric_drone.drone package &#8212; Documentation Sans titre 0.1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="interface_utilisateur package" href="interface_utilisateur.html" />
+    <link rel="prev" title="atmospheric_drone.air package" href="atmospheric_drone.air.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="atmospheric-drone-drone-package">
+<h1>atmospheric_drone.drone package<a class="headerlink" href="#atmospheric-drone-drone-package" title="Lien permanent vers cette rubrique">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Lien permanent vers cette rubrique">¶</a></h2>
+</section>
+<section id="module-atmospheric_drone.drone.drone">
+<span id="atmospheric-drone-drone-drone-module"></span><h2>atmospheric_drone.drone.drone module<a class="headerlink" href="#module-atmospheric_drone.drone.drone" title="Lien permanent vers cette rubrique">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="atmospheric_drone.drone.drone.Drone">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atmospheric_drone.drone.drone.</span></span><span class="sig-name descname"><span class="pre">Drone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diametre</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hauteur</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vitesse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atmospheric_drone.drone.drone.Drone" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="atmospheric_drone.drone.drone.Drone.trainee">
+<span class="sig-name descname"><span class="pre">trainee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">densite_air</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficient_trainee</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atmospheric_drone.drone.drone.Drone.trainee" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Calcule la traînée du drone.</p>
+<p>La méthode calcule la traînée du drone en utilisant les paramètres
+de densité de l’air et de coefficient de traînée fournis en option. Si les valeurs
+ne sont pas spécifiées, les valeurs par défaut sont utilisées.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>densite_air</strong> (<em>float</em>) – Densité de l’air en kg/m³. (Défaut: 1.2)</p></li>
+<li><p><strong>coefficient_trainee</strong> (<em>float</em>) – Coefficient de traînée du drone. (Défaut: 1.5)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>La valeur de la traînée du drone.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-atmospheric_drone.drone">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-atmospheric_drone.drone" title="Lien permanent vers cette rubrique">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Sans titre</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Sans titre</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="atmospheric_drone.html">atmospheric_drone package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_utilisateur.html">interface_utilisateur package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trajectoire.html">trajectoire package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Sans titre</a><ul>
+  <li><a href="atmospheric_drone.html">atmospheric_drone package</a><ul>
+      <li>Previous: <a href="atmospheric_drone.air.html" title="Chapitre précédent">atmospheric_drone.air package</a></li>
+      <li>Next: <a href="interface_utilisateur.html" title="Chapitre suivant">interface_utilisateur package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Cecilia Facca, Aurelien Fleury, Florian Gruter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/atmospheric_drone.drone.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
