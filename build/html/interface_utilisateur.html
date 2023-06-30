@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>interface_utilisateur package &#8212; Documentation Projet Final MGA802 1.0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="main module" href="main.html" />
+    <link rel="prev" title="atmospheric_drone.drone package" href="atmospheric_drone.drone.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="interface-utilisateur-package">
+<h1>interface_utilisateur package<a class="headerlink" href="#interface-utilisateur-package" title="Lien permanent vers cette rubrique">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Lien permanent vers cette rubrique">¶</a></h2>
+</section>
+<section id="module-interface_utilisateur.interface_drone">
+<span id="interface-utilisateur-interface-drone-module"></span><h2>interface_utilisateur.interface_drone module<a class="headerlink" href="#module-interface_utilisateur.interface_drone" title="Lien permanent vers cette rubrique">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="interface_utilisateur.interface_drone.DonneesDrone">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">interface_utilisateur.interface_drone.</span></span><span class="sig-name descname"><span class="pre">DonneesDrone</span></span><a class="headerlink" href="#interface_utilisateur.interface_drone.DonneesDrone" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="interface_utilisateur.interface_drone.DonneesDrone.get_drone_info">
+<span class="sig-name descname"><span class="pre">get_drone_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interface_utilisateur.interface_drone.DonneesDrone.get_drone_info" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Récupère les informations saisies sur le drone.</p>
+<p>Les informations de masse, hauteur, diamètre et vitesse sont récupérées à partir des champs
+de saisie de l’interface graphique. Les valeurs sont converties en nombres à virgule flottante
+et stockées dans les attributs correspondants de l’instance de la classe.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-interface_utilisateur.interface_points">
+<span id="interface-utilisateur-interface-points-module"></span><h2>interface_utilisateur.interface_points module<a class="headerlink" href="#module-interface_utilisateur.interface_points" title="Lien permanent vers cette rubrique">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="interface_utilisateur.interface_points.InterfaceUtilisateur">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">interface_utilisateur.interface_points.</span></span><span class="sig-name descname"><span class="pre">InterfaceUtilisateur</span></span><a class="headerlink" href="#interface_utilisateur.interface_points.InterfaceUtilisateur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="interface_utilisateur.interface_points.InterfaceUtilisateur.saisir_points">
+<span class="sig-name descname"><span class="pre">saisir_points</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interface_utilisateur.interface_points.InterfaceUtilisateur.saisir_points" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Saisit les coordonnées des points.</p>
+<p>Récupère le nombre de points saisi par l’utilisateur à partir du champ de saisie de l’interface graphique.
+Une nouvelle fenêtre s’ouvre avec les champs de saisie pour les coordonnées x et y de chaque point.
+Lorsque le bouton « Enregistrer » est cliqué, les coordonnées sont converties en nombres à virgule flottante
+et stockées dans la liste self.points.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-interface_utilisateur">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-interface_utilisateur" title="Lien permanent vers cette rubrique">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Projet Final MGA802</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Sans titre</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="atmospheric_drone.html">atmospheric_drone package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">interface_utilisateur package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trajectoire.html">trajectoire package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Sans titre</a><ul>
+      <li>Previous: <a href="atmospheric_drone.drone.html" title="Chapitre précédent">atmospheric_drone.drone package</a></li>
+      <li>Next: <a href="main.html" title="Chapitre suivant">main module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Cecilia Facca, Aurelien Fleury, Florian Gruter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/interface_utilisateur.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
