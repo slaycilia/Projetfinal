@@ -1,3 +1,4 @@
+
 # Projetfinal
 # Projet Python - Trajectoire de Drone
 
@@ -39,20 +40,27 @@ Le projet Python dépend des modules suivants :
 
 - `numpy` : Utilisé pour manipuler des tableaux de données numériques.
 - `matplotlib` : Utilisé pour tracer les graphiques de trajectoire.
+- `tkinter` : Utilisé pour l'interface graphique.
+- `math` : utilisé pour des calculs mathématiques.
+- `requests`: 
+- `requests`: utilisé pour la bibliothèque HTML.
 
 ## Configuration
 
-Les paramètres généraux du projet peuvent être configurés dans le fichier `main.py` :
+Les paramètres généraux du projet peuvent être configurés dans le fichier `main.py` via l'interface graphique:
 
 - `xmin`, `ymin`, `xmax`, `ymax` : Les limites de la zone que peut parcourir le drone.
 - `vitesse_vent` : La vitesse du vent en m/s.
 - `angle_vent` : L'angle du vent en degrés.
+- `xmin`, `ymin`, `xmax`, `ymax` : Les limites de la zone que peut parcourir le drone (elles sont fixées mais modifiables).
+- `vitesse_vent` : La vitesse du vent en m/s (via le module vent).
+- `angle_vent` : L'angle du vent en degrés (via le module vent).
 - `force_drone` : La force du drone.
 - `surface_contact` : La surface de contact du drone.
 - `masse_drone` : La masse du drone.
 - `vitesse_drone` : La vitesse du drone.
 
-Assurez-vous d'avoir les modules `numpy` et `matplotlib` installés dans votre environnement Python pour exécuter le projet correctement.
+Assurez-vous d'avoir les modules installés dans votre environnement Python pour exécuter le projet correctement via le fichier `requirements.txt`.
 
 ## Utilisation
 
@@ -62,6 +70,6 @@ Assurez-vous d'avoir les modules `numpy` et `matplotlib` installés dans votre e
 4. Un graphique 2D sera affiché pour visualiser les trajectoires.
 
 N'oubliez pas d'installer les dépendances requises avant d'exécuter le projet.
-
+Pour toute documentation sur les fonction le fichier `index.html` permet d'afficher les docstreams.
 Si vous avez des questions ou des problèmes, n'hésitez pas à nous contacter.
 
