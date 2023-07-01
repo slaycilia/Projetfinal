@@ -114,9 +114,9 @@ class TrajectoireDrone2D:
         y_coords = np.array([point[1] for point in trajectoire])
 
         s_arg = np.linspace(0, 1, len(trajectoire))  # Nouvel array s_arg
-
-        coeffs = np.polyfit(s_arg, x_coords, 30)
-        coeffs2 = np.polyfit(s_arg, y_coords, 30)
+        nbr_points = len(self.points_passage)
+        coeffs = np.polyfit(s_arg, x_coords, nbr_points)
+        coeffs2 = np.polyfit(s_arg, y_coords, nbr_points)
 
         x_interp = np.polyval(coeffs, s_arg)
         y_interp = np.polyval(coeffs2, s_arg)

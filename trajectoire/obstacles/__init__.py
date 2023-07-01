@@ -1,1 +1,0 @@
-from .obstacles_2D import Obstacle2D

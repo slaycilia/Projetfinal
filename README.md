@@ -1,7 +1,20 @@
 # Projetfinal
 # Projet Python - Trajectoire de Drone
 
+Ce projet est réalisé par Facca Cécilia, Fleury Aurélien et Gruter Florian.
+Il s'agit du projet final s'inscrivant dans le cours MGA802 (Étude de cas en aéronautique) de l'ETS à la session d'Été 2023.
+
+## Description du projet
 Ce projet Python vise à calculer et tracer la trajectoire d'un drone en fonction des points de passage et des conditions atmosphériques.
+
+Il est divisé en plusieurs parties : 
+- Récupération des données sur le vent en temps réel via le site https://openweathermap.org/
+- Calcul de la trajectoire lissée du drône ;
+- Calcul de la dérive exercée par le vent ;
+- Calcul de la trajectoire que doit suivre le drône pour contrer le vent ;
+- Affichage de la trajectoire du drône initiale, dérivée et corrigée ;
+- Création de l'interface utilisateur avec tkinter.
+
 
 ## Fonctionnalités
 
