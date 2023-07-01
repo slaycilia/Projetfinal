@@ -60,7 +60,7 @@ Assurez-vous d'avoir les modules installés dans votre environnement Python pour
 ## Utilisation
 
 1. Exécutez le fichier `main.py`.
-2. Suivez les instructions pour entrer les points de passage du drone.
+2. Suivez les instructions pour entrer les caractéristiques du drônes, indiquer l'emplacement de l'image utilisée pour le graphique et entrer les points de passage du drone.
 3. Le programme calculera la trajectoire initiale, la trajectoire déviée par le vent et la trajectoire finale.
 4. Un graphique 2D sera affiché pour visualiser les trajectoires.
 
