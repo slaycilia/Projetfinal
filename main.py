@@ -31,6 +31,9 @@ masse_drone = infos_drone.masse
 force_drone = atmospheric_drone.Drone(diametre, hauteur, vitesse_drone, masse_drone).trainee()
 surface_contact = atmospheric_drone.Drone(diametre, hauteur, vitesse_drone, masse_drone).surface
 
+# Information sur le chemin d'accès de l'image
+chemin = interface_utilisateur.ImageSelector().get_file_path()
+
 ##TRAJECTOIRE SOUHAITÉE INITIALEMENT
 
 # Points par lequel le drône doit passer
@@ -46,4 +49,4 @@ traj_ini = trajectoire_drone_ideale.lisser_trajectoire()
 trajectoire_drone_derivee = trajectoire.TrajectoiresDeriveeEtInitiale(traj_ini, vitess_vent, angle_vent, surface_contact, force_drone)
 traj_dev = trajectoire_drone_derivee.calculer_trajectoire_derivee()
 traj_fin = trajectoire_drone_derivee.calculer_trajectoire_initiale()
-tracer = trajectoire.AffichageTrajectoireDrone2D(points_passage, xmin, ymin, xmax, ymax).tracer_trajectoire_2D(traj_ini, traj_dev, traj_fin)
+tracer = trajectoire.AffichageTrajectoireDrone2D(points_passage, xmin, ymin, xmax, ymax).tracer_trajectoire_2D(chemin, traj_ini, traj_dev, traj_fin)

@@ -22,10 +22,12 @@ class AffichageTrajectoireDrone2D:
         self.xmax = xmax
         self.ymax = ymax
 
-    def tracer_trajectoire_2D(self, trajectoire_initiale, trajectoire_deviee, trajectoire_finale):
+    def tracer_trajectoire_2D(self, chemin, trajectoire_initiale, trajectoire_deviee, trajectoire_finale):
         """
         Trace les trajectoires 2D du drone.
 
+        :param chemin: Le chemin d'accès de l'image.
+        :type chemin: string
         :param trajectoire_initiale: La trajectoire initiale souhaitée.
         :type trajectoire_initiale: list[(float, float)]
         :param trajectoire_deviee: La trajectoire déviée.
@@ -33,8 +35,8 @@ class AffichageTrajectoireDrone2D:
         :param trajectoire_finale: La trajectoire finale.
         :type trajectoire_finale: list[(float, float)]
         """
-        #image = plt.imread('/Users/ceciliou/Document/ETS MTL/MGA802_ETE/Projetfinal/Projet/Sans titre/trajectoire/images/testimage.jpg')
-        image = plt.imread(r'C:\Users\sifak\OneDrive\Documents\Cours\2022-2023\Session Eté\MGA802\Projet-final\Projetfinal\trajectoire\images\testimage.jpg')
+
+        image = plt.imread(chemin)
         fig, ax = plt.subplots()
         ax.imshow(image, extent=[self.xmin, self.xmax, self.ymin, self.ymax], aspect='auto', alpha=0.5)
 
