@@ -41,15 +41,15 @@ Le projet Python dépend des modules suivants :
 - `matplotlib` : Utilisé pour tracer les graphiques de trajectoire.
 - `tkinter` : Utilisé pour l'interface graphique.
 - `math` : utilisé pour des calculs mathématiques.
-- `requests`: 
+- `requests`: utilisé pour la bibliothèque HTML.
 
 ## Configuration
 
 Les paramètres généraux du projet peuvent être configurés dans le fichier `main.py` via l'interface graphique:
 
-- `xmin`, `ymin`, `xmax`, `ymax` : Les limites de la zone que peut parcourir le drone.
-- `vitesse_vent` : La vitesse du vent en m/s.
-- `angle_vent` : L'angle du vent en degrés.
+- `xmin`, `ymin`, `xmax`, `ymax` : Les limites de la zone que peut parcourir le drone (elles sont fixées mais modifiables).
+- `vitesse_vent` : La vitesse du vent en m/s (via le module vent).
+- `angle_vent` : L'angle du vent en degrés (via le module vent).
 - `force_drone` : La force du drone.
 - `surface_contact` : La surface de contact du drone.
 - `masse_drone` : La masse du drone.
