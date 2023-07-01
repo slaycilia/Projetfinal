@@ -39,6 +39,8 @@ class AffichageTrajectoireDrone2D:
         image = plt.imread(chemin)
 
         fig, ax = plt.subplots()
+        ax.imshow(image, extent=[self.xmin, self.xmax, self.ymin, self.ymax], aspect='auto', alpha=0.5)
+
 
         x_rep, y_rep = zip(*self.points_passage)
         x_init, y_init = zip(*trajectoire_initiale)  # Séparer les coordonnées x et y de la trajectoire initiale
