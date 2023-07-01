@@ -1,0 +1,1 @@
+from trajectoire.calcul_trajectoire.calculer_trajectoire_lissee_2D import TrajectoireDrone2D
